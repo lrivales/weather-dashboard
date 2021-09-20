@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- get bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <title>Weather Dashboard</title>
+</head>
+<body class="container">
+    <header>
+        <h1 class="d-block p-2 bg-primary text-white text-center">Weather Dashboard</h1>
+        </div>
+    </header>
+        
+    <div class="row">
+        <div class="col-2">
+            <div class="mb-3">
+                <label for="city" class="form-label fs-4 fw-bold">Search for a City:</label>
+                <textarea class="form-control" id="city">San Diego</textarea>
+                <button type="button" class="btn btn-primary mt-2 w-100">Search</button>
+            </div>
+            
+            <hr class="border border-dark">
+            <div>
+                <button type="button" class="btn btn-primary mt-2 w-100">Austin</button>
+                <button type="button" class="btn btn-primary mt-2 w-100">Chicago</button>
+                <button type="button" class="btn btn-primary mt-2 w-100">New York</button>
+                <button type="button" class="btn btn-primary mt-2 w-100">Orlando</button>
+                <button type="button" class="btn btn-primary mt-2 w-100">San Francisco</button>
+                <button type="button" class="btn btn-primary mt-2 w-100">Seattle</button>
+                <button type="button" class="btn btn-primary mt-2 w-100">Denver</button>
+                <button type="button" class="btn btn-primary mt-2 w-100">Atlanta</button>
+            </div>
+        </div>
+
+        <div class="card col-9 p-2">
+            <div class="card-title fs-4 fw-bold">Atlanta</div>
+                <p class="card-text">Temp:</p>
+                <p class="card-text">Wind:</p>
+                <p class="card-text">Humidity:</p>
+                <p class="card-text">UV Index:</p>
+                <hr>
+                <div class="container">
+                    <div class="fs-4 fw-bold">5-Day Forecast</div>
+                    <div class="row justify-content-around">
+                        <div class="card col-2 bg-primary text-white">
+                            <div class="card-title fs-5 fw-bold">Monday</div>
+                            <p class="card-text">Temp:</p>
+                            <p class="card-text">Wind:</p>
+                            <p class="card-text">Humidity:</p>
+                        </div>
+                        <div class="card col-2 bg-primary text-white">
+                            <div class="card-title fs-5 fw-bold">Tuesday</div>
+                            <p class="card-text">Temp:</p>
+                            <p class="card-text">Wind:</p>
+                            <p class="card-text">Humidity:</p>
+                        </div>
+                        <div class="card col-2 bg-primary text-white">
+                            <div class="card-title fs-5 fw-bold">Wednesday</div>
+                            <p class="card-text">Temp:</p>
+                            <p class="card-text">Wind:</p>
+                            <p class="card-text">Humidity:</p>
+                        </div>
+                        <div class="card col-2 bg-primary text-white">
+                            <div class="card-title fs-5 fw-bold">Thursday</div>
+                            <p class="card-text">Temp:</p>
+                            <p class="card-text">Wind:</p>
+                            <p class="card-text">Humidity:</p>
+                        </div>
+                        <div class="card col-2 bg-primary text-white">
+                            <div class="card-title fs-5 fw-bold">Friday</div>
+                            <p class="card-text">Temp:</p>
+                            <p class="card-text">Wind:</p>
+                            <p class="card-text">Humidity:</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- bootstrap bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    
+    <!-- my javascript -->
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
