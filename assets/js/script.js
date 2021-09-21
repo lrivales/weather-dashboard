@@ -27,6 +27,7 @@ var getCurrentWeather = function(city) {
                             $("#wind").text("Wind: "+data.current.wind_speed+" MPH");
                             $("#humidity").text("Humidity: "+data.current.humidity+"%");
                             $("#uv-index").text("UV Index: "+data.current.uvi);
+                            getFutureWeather(apiUrl);
                         });
                     } else {
                         alert("Invalid data submitted/returned.");
@@ -37,6 +38,21 @@ var getCurrentWeather = function(city) {
             alert("Please provide a valid city.");
         }
     });
+};
+
+var getFutureWeather = function(apiUrl) {
+    fetch(apiUrl).then(function(response) {
+        if (response.ok) {
+            response.json().then(function(data) {
+                for (var i = 0; i < 5; i++) {
+                    // console.log(data.daily[i]);
+                    var futureDate = luxon.DateTime.fromSeconds(data.daily[i].dt).toLocaleString();
+                    // console.log(futureDate);
+                    $("#"+i).text(futureDate);
+                }
+            });
+        }
+    })
 };
 
 var createHistBtns = function(){
@@ -76,7 +92,7 @@ var searchFormHandler = function(event) {
 
 var historyBtnHandler = function(event) {
     searchTxt = $(this).attr("id");
-    console.log(searchTxt);
+    // console.log(searchTxt);
     getCurrentWeather(searchTxt);
 };
 
