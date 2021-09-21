@@ -49,6 +49,9 @@ var getFutureWeather = function(apiUrl) {
                     var futureDate = luxon.DateTime.fromSeconds(data.daily[i].dt).toLocaleString();
                     // console.log(futureDate);
                     $("#"+i).text(futureDate);
+                    $("#"+i+"-temp").text("Temp: "+data.daily[i].temp.day+"F");
+                    $("#"+i+"-wind").text("Wind: "+data.daily[i].wind_speed+" MPH");
+                    $("#"+i+"-humidity").text("Humidity: "+data.daily[i].humidity);
                 }
             });
         }
