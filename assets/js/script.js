@@ -75,8 +75,7 @@ var searchFormHandler = function(event) {
 };
 
 var historyBtnHandler = function(event) {
-    var searchTxt = "";
-    searchTxt = $(".searchHist").attr("id");
+    searchTxt = $(this).attr("id");
     console.log(searchTxt);
     getCurrentWeather(searchTxt);
 };
