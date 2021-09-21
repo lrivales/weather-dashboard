@@ -20,7 +20,19 @@ var getCurrentWeather = function(city) {
                 fetch(apiUrl).then(function(response) {
                     if (response.ok) {
                         response.json().then(function(data){
-                            // console.log(data);
+                            // console.log(data.current.weather[0].icon);
+                            
+                            // add current weather icon
+                            weatherIconEl = document.createElement("link");
+                            weatherIconEl.setAttribute("rel", "icon");
+                            weatherIconEl.setAttribute("type", "image/png");
+                            weatherIconEl.setAttribute("href", "https://openweathermap.org/img/wn/"+data.current.weather[0].icon+"@2x.png")
+                            console.log(weatherIconEl);
+                            currentWeatherCardEl = document.getElementById("city");
+                            console.log(currentWeatherCardEl);
+                            currentWeatherCardEl.appendChild(weatherIconEl);
+                            // document.getElementById("#city").appendChild(weatherIconEl);
+                            
                             // update page with current weather
                             $("#city").text(city);
                             $("#temp").text("Temp: "+data.current.temp+"F");
@@ -41,13 +53,16 @@ var getCurrentWeather = function(city) {
 };
 
 var getFutureWeather = function(apiUrl) {
+    // fetch future weather
     fetch(apiUrl).then(function(response) {
         if (response.ok) {
             response.json().then(function(data) {
                 for (var i = 0; i < 5; i++) {
                     // console.log(data.daily[i]);
+                    // convert unix time to human readable time
                     var futureDate = luxon.DateTime.fromSeconds(data.daily[i].dt).toLocaleString();
                     // console.log(futureDate);
+                    // update daily forecast card with weather info
                     $("#"+i).text(futureDate);
                     $("#"+i+"-temp").text("Temp: "+data.daily[i].temp.day+"F");
                     $("#"+i+"-wind").text("Wind: "+data.daily[i].wind_speed+" MPH");
@@ -55,7 +70,7 @@ var getFutureWeather = function(apiUrl) {
                 }
             });
         }
-    })
+    });
 };
 
 var createHistBtns = function(){
