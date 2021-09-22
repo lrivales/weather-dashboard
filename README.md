@@ -2,7 +2,7 @@
 
 This is the module 6 assigment for the GW Coding Bootcamp Course submitted by Lawrence Rivales.
 
-This is a weather dashboard app.  It can be reached at 
+This is a weather dashboard app.  It can be reached at https://lrivales.github.io/weather-dashboard/
 
 ## Usage
 1. Type a valid city name and click search.
